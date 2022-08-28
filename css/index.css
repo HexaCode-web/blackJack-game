@@ -1,0 +1,278 @@
+/* ==========================================================================
+                                               GENERAL
+============================================================================= */
+body {
+  margin: auto;
+  overflow-y: auto;
+  font-weight: bold;
+  background-color: #eff0ea;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+h1 {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+}
+p {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+  width: 100%;
+  font-size: 2rem;
+}
+.main {
+  border-radius: 20px;
+  width: 60%;
+  background-color: #eccda9;
+  gap: 40px;
+  margin-top: 2%;
+
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  animation: 1s ease-out 0s 1 slideInFromTop;
+  padding: 10px;
+  border-radius: 20px;
+  width: 600px;
+  background-color: #eccda9;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+button {
+  border: none;
+  color: #fca311;
+  background-color: #14213d;
+  margin-top: 10px;
+  border-radius: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  height: 60px;
+  width: 200px;
+  transition: all 0.5s;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+/* ==========================================================================
+                                               INTERACTIONS
+============================================================================= */
+button:hover {
+  width: 210px;
+  height: 70px;
+}
+button:active {
+  background-color: green;
+  height: 60px;
+  width: 200px;
+}
+input,
+input:focus {
+  font-size: 170%;
+  text-align: center;
+  background-color: transparent;
+  border: 0px;
+  border-bottom: 2px solid black;
+  max-width: 50px;
+  height: 50px;
+  animation: 1s ease-out 0s 1 slideInFromRight;
+  margin-bottom: 10px;
+}
+/* ==========================================================================
+                                               COUNTER
+============================================================================= */
+
+.counter {
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 30px;
+  row-gap: 10px;
+  max-width: 450px;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  animation: 1s ease-out 0s 1 slideInFromTop;
+}
+/* ==========================================================================
+                                               CALCUATOR
+============================================================================= */
+.calc {
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: 1s ease-out 0s 1 slideInFromTop;
+}
+/* ==========================================================================
+                                               BLACKJACK
+============================================================================= */
+#GAME {
+  font-style: italic;
+  display: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-align: center;
+  margin-top: none;
+  height: 120%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  background-image: url(images/background.jpg);
+  font-weight: bold;
+  background-size: cover;
+  animation: 1s ease-out 0s 1 slideInFromTop;
+}
+.gameText {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+  font-style: italic;
+  color: white;
+  font-size: 2rem;
+}
+.gameHeader {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+  font-style: italic;
+  color: goldenrod;
+  font-size: 3rem;
+}
+.popupName,
+.buyChips,
+.popupChooseCard,
+.popupBetting{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: #fca311;
+  border-radius: 10px;
+  transform: translate(0, 150px);
+  animation: 1s ease-out 0s 1 slideInFromTopPOPUPname;
+}
+
+.buyChips {
+  top: 100px;
+  transition: none;
+  animation: none;
+}
+.popupBetting{
+  transform: translate(0, -50px);
+  animation: 1s ease-out 0s 1 slideInFromTopPOPUP;
+}
+.popupChooseCard {
+  transform: translate(0px, -100px);
+  animation: 1s ease-out 0s 1 slideInFromTop;
+}
+.popupBuy {
+  display: none;
+}
+.choosing{
+  display: none;
+}
+.popupBetting input,
+.popupName input,
+.buyChips input{
+  max-width: 100px;
+  font-size: 150%;
+}
+.btn {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  width: 200px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  color: #016f32;
+  font-style: italic;
+  background-color: goldenrod;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+.btn:active {
+  border: 3px solid cyan;
+}
+#restart {
+  display: none;
+}
+#newcard {
+  position: relative;
+  top: 10px;
+  display: none;
+}
+#sum,
+#cards {
+  display: none;
+}
+/* ==========================================================================
+                                               ANIMATIONS
+============================================================================= */
+@keyframes slideInFromTop {
+  0% {
+    transform: translatey(-100%);
+  }
+  70% {
+    transform: translatey(10%);
+  }
+  100% {
+    transform: translatey(0);
+  }
+}
+@keyframes slideInFromTopPOPUP {
+  0% {
+    transform: translate(0px, -150px);
+  }
+  100% {
+    transform: translate(px, -50px);
+  }
+}
+@keyframes slideInFromTopPOPUPname {
+  0% {
+    transform: translate(0, 50px);
+  }
+  100% {
+    transform: translate(0, 150px);
+  }
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translatex(100%);
+  }
+  70% {
+    transform: translatex(-10%);
+  }
+  100% {
+    transform: translatex(0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translatex(-100%);
+  }
+  70% {
+    transform: translatex(10%);
+  }
+  100% {
+    transform: translatex(0);
+  }
+}
+@media screen and (max-width: 450px) {
+  header {
+    align-items: center;
+    margin-left: 10px;
+    width: 90%;
+    flex-direction: column;
+  }
+  .main {
+    width: 95%;
+    margin-left: 10px;
+  }
+}

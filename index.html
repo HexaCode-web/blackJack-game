@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>javascript projects</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <button onclick="makeCalcVisible()">calclator</button>
+        <button onclick="makeCountVisible()">counter</button>
+        <button onclick="makeGameVisible()">BlackJack</button>
+      </header>
+      <div class="main">
+        <div class="popupChooseCard">
+          <h1 id="ace">you got an ace!</h1>
+          <h2>do you want the ace to be:</h2>
+          <button class="choosing" id="chooseone" onclick="chooseone()">
+            1
+          </button>
+          <button class="choosing" id="choose11" onclick="choose11()">
+            11
+          </button>
+        </div>
+        <div class="popupBuy">
+          <h2 id="BuyHeader1">you dont have enough chips</h2>
+          <h3 id="BuyHeader2">want to buy more chips?</h3>
+          <button id="Yes" onclick="buyMore()">YES</button>
+          <button id="No" onclick="closeGame()">NO</button>
+        </div>
+        <div class="buyChips">
+          <h1>buy Chips</h1>
+          <h2>Enter amount</h2>
+          <input type="number" id="chipsAmount" />
+          <button type="submit" onclick="buyNow()">BUY NOW</button>
+        </div>
+        <div class="popupName">
+          <h2>what is your name?</h2>
+          <input class="popupTXT" id="newName" type="text" />
+          <h2>what are your starting chips?</h2>
+          <input class="popupNameTXT" id="bettingNewValue" type="number" />
+          <input class="popupNameBTN" type="submit" onclick="updateInfo()" />
+        </div>
+        <div class="popupBetting">
+          <h2>how much do you want to bid?</h2>
+          <input class="popupBettingTXT" type="number" step="10" />
+          <button class="popupBettingBTN" onclick="betting()" type="submit">
+            BID
+          </button>
+        </div>
+        <div id="GAME">
+          <h1 class="gameHeader">BlackJack!</h1>
+          <p id="player" class="gameText"></p>
+          <p class="gameText" id="bettingValue"></p>
+          <p class="gameText" id="message-el">want to play a round?</p>
+          <p class="gameText" id="cards">cards:</p>
+          <p class="gameText" id="third"></p>
+          <p class="gameText" id="sum">sum:</p>
+          <button id="Start" class="btn" onclick="startgame()">
+            START GAME
+          </button>
+          <button id="restart" class="btn" onclick="Restart()">
+            PLAY AGAIN?
+          </button>
+          <button class="btn" id="newcard" onclick="newcard()">NEW CARD</button>
+        </div>
+        <div class="calc">
+          <h1>Calclator</h1>
+          <div style="display: flex; gap: 10px">
+            <input id="firstNum" /><input id="op" /><input id="secondNum" />
+          </div>
+          <button onclick="logNumbers()">calculate</button>
+          <input id="result" readonly />
+        </div>
+        <div class="counter">
+          <h1>people entered:</h1>
+          <h2 id="count-num">0</h2>
+          <button id="increment" onclick="increment()">increment</button>
+          <button id="decrement" onclick="decrement()">decrement</button>
+          <button id="save" onclick="save()">save</button>
+          <button id="reset" onclick="reset()">reset</button>
+          <p id="previous">value of entries:</p>
+          <button id="sum-btn" onclick="totalEntries()">sum</button>
+          <p id="sum">0</p>
+        </div>
+      </div>
+      <script src="js/index.js"></script>
+    </div>
+  </body>
+</html>
