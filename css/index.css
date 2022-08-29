@@ -7,6 +7,7 @@ body {
   font-weight: bold;
   background-color: #eff0ea;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -30,7 +31,6 @@ p {
   background-color: #eccda9;
   gap: 40px;
   margin-top: 2%;
-
   display: flex;
   text-align: center;
   justify-content: center;
@@ -47,6 +47,7 @@ header {
   gap: 20px;
 }
 button {
+  font-family: "Oswald", sans-serif;
   border: none;
   color: #fca311;
   background-color: #14213d;
@@ -93,7 +94,6 @@ input:focus {
   gap: 30px;
   row-gap: 10px;
   max-width: 450px;
-  display: none;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -103,8 +103,8 @@ input:focus {
                                                CALCUATOR
 ============================================================================= */
 .calc {
+  display: flex;
   width: 100%;
-  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -114,6 +114,7 @@ input:focus {
                                                BLACKJACK
 ============================================================================= */
 #GAME {
+  min-height: 450px;
   font-style: italic;
   display: none;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -141,10 +142,11 @@ input:focus {
   color: goldenrod;
   font-size: 3rem;
 }
+
 .popupName,
 .buyChips,
 .popupChooseCard,
-.popupBetting{
+.popupBetting {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -157,13 +159,16 @@ input:focus {
   transform: translate(0, 150px);
   animation: 1s ease-out 0s 1 slideInFromTopPOPUPname;
 }
+.popupName {
+  display: flex;
+}
 
 .buyChips {
   top: 100px;
   transition: none;
   animation: none;
 }
-.popupBetting{
+.popupBetting {
   transform: translate(0, -50px);
   animation: 1s ease-out 0s 1 slideInFromTopPOPUP;
 }
@@ -174,12 +179,12 @@ input:focus {
 .popupBuy {
   display: none;
 }
-.choosing{
+.choosing {
   display: none;
 }
 .popupBetting input,
 .popupName input,
-.buyChips input{
+.buyChips input {
   max-width: 100px;
   font-size: 150%;
 }
@@ -210,6 +215,9 @@ input:focus {
 }
 #sum,
 #cards {
+  display: none;
+}
+.hidden {
   display: none;
 }
 /* ==========================================================================

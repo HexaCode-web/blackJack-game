@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <title>javascript projects</title>
   </head>
   <body>
@@ -36,7 +42,7 @@
           <input type="number" id="chipsAmount" />
           <button type="submit" onclick="buyNow()">BUY NOW</button>
         </div>
-        <div class="popupName">
+        <div class="popupName hidden">
           <h2>what is your name?</h2>
           <input class="popupTXT" id="newName" type="text" />
           <h2>what are your starting chips?</h2>
@@ -66,7 +72,7 @@
           </button>
           <button class="btn" id="newcard" onclick="newcard()">NEW CARD</button>
         </div>
-        <div class="calc">
+        <div class="calc hidden">
           <h1>Calclator</h1>
           <div style="display: flex; gap: 10px">
             <input id="firstNum" /><input id="op" /><input id="secondNum" />
@@ -74,7 +80,7 @@
           <button onclick="logNumbers()">calculate</button>
           <input id="result" readonly />
         </div>
-        <div class="counter">
+        <div class="counter hidden">
           <h1>people entered:</h1>
           <h2 id="count-num">0</h2>
           <button id="increment" onclick="increment()">increment</button>

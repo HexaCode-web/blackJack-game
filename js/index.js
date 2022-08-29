@@ -11,60 +11,25 @@ let game = document.querySelector("#GAME");
 var numberValue = number.innerText;
 let result = 0;
 let final = 0;
-let clicks = 0;
-let clicked = false;
 /* ==========================================================================
                                                FUNCTIONS
 ============================================================================= */
-function checkclicks() {
-  clicks = clicks + 1;
-  if (clicks % 2 === 1) {
-    //on
-    clicked = true;
-  }
-  if (clicks % 2 === 0) {
-    //off
-    clicked = false;
-  }
-}
 function makeGameVisible() {
-  checkclicks();
-  if (clicked === true) {
-    popUPName.style.display = "flex";
-    game.style.display = "none";
-    calc.style.display = "none";
-    counter.style.display = "none";
-  }
-  if (clicked === false) {
-    game.style.display = "none";
-    popUPName.style.display = "none";
-  }
+  popUPName.classList.toggle("hidden");
+  counter.classList.add("hidden");
+  calc.classList.add("hidden");
 }
 function makeCalcVisible() {
-  checkclicks();
-  if (clicked === true) {
-    popUPName.style.display = "none";
-    calc.style.display = "flex";
-    game.style.display = "none";
-    counter.style.display = "none";
-    popupBuy.style.display = "none";
-  }
-  if (clicked === false) {
-    calc.style.display = "none";
-  }
+  popUPName.classList.add("hidden");
+  counter.classList.add("hidden");
+  calc.classList.toggle("hidden");
+  game.style.display = "none";
 }
 function makeCountVisible() {
-  checkclicks();
-  if (clicked === true) {
-    popUPName.style.display = "none";
-    counter.style.display = "flex";
-    game.style.display = "none";
-    calc.style.display = "none";
-    popupBuy.style.display = "none";
-  }
-  if (clicked === false) {
-    counter.style.display = "none";
-  }
+  popUPName.classList.add("hidden");
+  calc.classList.add("hidden");
+  game.style.display = "none";
+  counter.classList.toggle("hidden");
 }
 function logNumbers() {
   var firstNumber = document.getElementById("firstNum").value;
@@ -158,7 +123,7 @@ function updateInfo() {
   player.chips = Number(newChipsAmount);
   player.name = newName;
   playerEl.textContent = `Welcome ${player.name} ,Your current balance is: ${player.chips}$`;
-  popUPName.style.display = "none";
+  popUPName.classList.add("hidden");
   game.style.display = "block";
   return;
 }
