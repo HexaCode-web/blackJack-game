@@ -20,7 +20,7 @@
         <button onclick="makeGameVisible()">BlackJack</button>
       </header>
       <div class="main">
-        <div class="popupChooseCard">
+        <div class="popupChooseCard popups">
           <h1 id="ace">you got an ace!</h1>
           <h2>do you want the ace to be:</h2>
           <button class="choosing" id="chooseone" onclick="chooseone()">
@@ -30,26 +30,31 @@
             11
           </button>
         </div>
-        <div class="popupBuy">
+        <div class="popupBuy popups">
           <h2 id="BuyHeader1">you dont have enough chips</h2>
           <h3 id="BuyHeader2">want to buy more chips?</h3>
           <button id="Yes" onclick="buyMore()">YES</button>
           <button id="No" onclick="closeGame()">NO</button>
         </div>
-        <div class="buyChips">
+        <div class="buyChips popups">
           <h1>buy Chips</h1>
           <h2>Enter amount</h2>
           <input type="number" id="chipsAmount" />
           <button type="submit" onclick="buyNow()">BUY NOW</button>
         </div>
-        <div class="popupName hidden">
-          <h2>what is your name?</h2>
+        <div class="popupName hidden popups">
+          <h2>PlayerName</h2>
           <input class="popupTXT" id="newName" type="text" />
-          <h2>what are your starting chips?</h2>
+          <h2>StartingChips</h2>
           <input class="popupNameTXT" id="bettingNewValue" type="number" />
-          <input class="popupNameBTN" type="submit" onclick="updateInfo()" />
+          <input
+            class="popupNameBTN"
+            type="submit"
+            value="Confirm"
+            onclick="updateInfo()"
+          />
         </div>
-        <div class="popupBetting">
+        <div class="popupBetting popups">
           <h2>how much do you want to bid?</h2>
           <input class="popupBettingTXT" type="number" step="10" />
           <button class="popupBettingBTN" onclick="betting()" type="submit">
