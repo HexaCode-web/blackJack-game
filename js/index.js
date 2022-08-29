@@ -2,7 +2,7 @@
                                                VARIABLES
 ============================================================================= */
 let historyValues = [];
-let sum = document.getElementById("sum");
+let sum = document.getElementById("sumCount");
 const number = document.querySelector("#count-num");
 let history = document.querySelector("#previous");
 let calc = document.querySelector(".calc");
@@ -54,6 +54,9 @@ function logNumbers() {
   }
   if (op === "/") {
     let calcResult = Number(firstNumber) / Number(secondNumber);
+    if (calcResult === NaN) {
+      resultBox.value = error;
+    }
     resultBox.value = calcResult;
   }
 }
