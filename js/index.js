@@ -18,6 +18,7 @@ function makeGameVisible() {
   popUPName.classList.toggle("hidden");
   counter.classList.add("hidden");
   calc.classList.add("hidden");
+  game.style.display = "none";
 }
 function makeCalcVisible() {
   popUPName.classList.add("hidden");
