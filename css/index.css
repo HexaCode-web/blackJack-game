@@ -7,13 +7,7 @@ body {
   font-weight: bold;
   background-color: #eff0ea;
 }
-<<<<<<< HEAD
 
-=======
-.hidden{
-display:none;
-}
->>>>>>> 6ae17d063b06a4718a0b46e62ba8b7cac74efc0c
 .container {
   display: flex;
   flex-direction: column;
