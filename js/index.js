@@ -16,6 +16,8 @@ let final = 0;
 ============================================================================= */
 function makeGameVisible() {
   popUPName.classList.toggle("hidden");
+  popUPBetting.style.display = "none";
+  popupBuy.style.display = "none";
   counter.classList.add("hidden");
   calc.classList.add("hidden");
   game.style.display = "none";
@@ -137,6 +139,7 @@ function updateInfo() {
   popUPName.classList.add("hidden");
   game.style.display = "block";
   holdBtn.style.display = "none";
+  Restart();
   return;
 }
 function startgame() {
@@ -147,6 +150,7 @@ function startgame() {
     resultGAME.style.display = "none";
     cards.style.display = "none";
     popUPBetting.style.display = "flex";
+    holdBtn.style.display = "none";
     firstCard = getRandomNumber2();
     secondCard = getRandomNumber2();
     dealerCard1 = getRandomNumber2();
@@ -171,10 +175,9 @@ function startgame() {
     } else {
       restart.style.display = "none";
       newCard.style.display = "none";
-      holdBtn.style.display = "none";
       StartBtn.style.display = "none";
       StartBtn.innerText = "RESHUFFLE?";
-      holdBtn.style.display = "inline";
+      holdBtn.style.display = "none";
       rendergame();
     }
   }
@@ -195,6 +198,7 @@ function betting() {
     cards.style.display = "block";
     newCard.style.display = "inline";
     StartBtn.style.display = "inline";
+    holdBtn.style.display = "inline";
   }
 }
 function getRandomNumber2() {
@@ -352,6 +356,7 @@ function endGame() {
   if (sumDealerCards > 21) {
     Stats = `you got ${sumGAME} the dealer has ${sumDealerCards}, you won!`;
     player.chips = player.chips + numBidValue;
+    playerEl.innerHTML = `Welcome <span class="highLightBlack">${player.name}</span> ,Your current balance is: <span class="highLightBlack">${player.chips}$</span>`;
   } else {
     if (sumGAME === 18 && sumGAME > sumDealerCards) {
       Stats = `you got ${sumGAME} the dealer has ${sumDealerCards} you got back 20% of your betting!`;
