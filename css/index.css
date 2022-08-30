@@ -132,8 +132,29 @@ input:focus {
   background-size: cover;
   animation: 1s ease-out 0s 1 slideInFromTop;
 }
+.highLightBlack {
+  color: black;
+}
+.highLightRed {
+  color: red;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  animation: ChangeColor 1s infinite;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
 .gameText {
-  animation: 1s ease-out 0s 1 slideInFromRight;
+  animation: 1s ease-out 0s 0s slideInFromRight;
+  font-style: italic;
+  color: white;
+  font-size: 2rem;
+}
+.cardsContainer {
+  animation: slideInFromRight 1s ease-out 0s none both;
+  display: flex;
   font-style: italic;
   color: white;
   font-size: 2rem;
@@ -144,7 +165,11 @@ input:focus {
   color: goldenrod;
   font-size: 3rem;
 }
-
+.cardResizer {
+  animation: slideInFromTop 1s ease-out 0s none both;
+  width: 70px;
+  margin-left: 15px;
+}
 .popups {
   padding: 20px;
   display: none;
@@ -194,8 +219,6 @@ input {
   display: none;
 }
 #newcard {
-  position: relative;
-  top: 10px;
   display: none;
 }
 #sum,
@@ -203,6 +226,9 @@ input {
   display: none;
 }
 .hidden {
+  display: none;
+}
+#DealerCards {
   display: none;
 }
 /* ==========================================================================
@@ -217,6 +243,17 @@ input {
   }
   100% {
     transform: translatey(0);
+  }
+}
+@keyframes ChangeColor {
+  0% {
+    color: black;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: black;
   }
 }
 @keyframes slideInFromTopPOPUPs {

@@ -55,27 +55,34 @@
           />
         </div>
         <div class="popupBetting popups">
-          <h2>how much do you want to bid?</h2>
+          <h2>how much do you want to bet?</h2>
           <input class="popupBettingTXT" type="number" step="10" />
           <button class="popupBettingBTN" onclick="betting()" type="submit">
-            BID
+            BET
           </button>
+          <button id="Yes" onclick="buyMore()">BuyChips?</button>
         </div>
         <div id="GAME">
           <h1 class="gameHeader">BlackJack!</h1>
           <p id="player" class="gameText"></p>
           <p class="gameText" id="bettingValue"></p>
           <p class="gameText" id="message-el">want to play a round?</p>
-          <p class="gameText" id="cards">cards:</p>
+          <p class="cardsContainer" id="cards">cards:</p>
           <p class="gameText" id="third"></p>
           <p class="gameText" id="sum">sum:</p>
-          <button id="Start" class="btn" onclick="startgame()">
-            START GAME
-          </button>
-          <button id="restart" class="btn" onclick="Restart()">
-            PLAY AGAIN?
-          </button>
-          <button class="btn" id="newcard" onclick="newcard()">NEW CARD</button>
+          <p class="gameText" id="DealerCards">dealercards:</p>
+          <div class="buttons">
+            <button id="Start" class="btn" onclick="startgame()">
+              START GAME
+            </button>
+            <button id="restart" class="btn" onclick="Restart()">
+              PLAY AGAIN?
+            </button>
+            <button class="btn" id="Hold" onclick="endGame()">HOLD</button>
+            <button class="btn" id="newcard" onclick="newcard()">
+              NEW CARD
+            </button>
+          </div>
         </div>
         <div class="calc hidden">
           <h1>Calclator</h1>
